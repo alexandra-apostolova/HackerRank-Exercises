@@ -55,5 +55,32 @@ namespace HackerRankExercises
             Console.WriteLine(applesInRange.Count);
             Console.WriteLine(orangesInRange.Count);
         }
+
+        public string kangaroo(int x1, int v1, int x2, int v2)
+        {
+            if (x2 > x1 && v2 > v1)
+            {
+                return "NO";
+            }
+
+            int jumpCount = 0;
+
+            while (true)
+            {
+                x1 += v1;
+                x2 += v2;
+                jumpCount++;
+
+                if (x1 == x2)
+                {
+                    return "YES";
+                }
+
+                if (jumpCount == 10000)
+                {
+                    return "NO";
+                }
+            }
+        }
     }
 }
