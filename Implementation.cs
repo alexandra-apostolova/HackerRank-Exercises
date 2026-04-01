@@ -82,5 +82,10 @@ namespace HackerRankExercises
                 }
             }
         }
+
+        public static int getTotalX(List<int> a, List<int> b)
+        {
+
+        }
     }
 }
