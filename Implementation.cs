@@ -82,10 +82,13 @@ namespace HackerRankExercises
                 }
             }
         }
+<<<<<<< HEAD:Implementation.cs
 
         public static int getTotalX(List<int> a, List<int> b)
         {
 
         }
+=======
+>>>>>>> 5fe4a357e8bdb81ce5d09c01ffbbd812af078621:BitManipulation.cs
     }
 }
