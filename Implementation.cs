@@ -1,7 +1,7 @@
 ﻿
 namespace HackerRankExercises
 {
-    public class BitManipulation
+    public class Implementation
     {
         public List<int> gradingStudents(List<int> grades)
         {
@@ -50,7 +50,7 @@ namespace HackerRankExercises
             }
 
             List<int> applesInRange = apples.Where(a => a >= s && a <= t).ToList();
-            List<int> orangesInRange = oranges.Where(o =>  o >= s && o <= t).ToList();
+            List<int> orangesInRange = oranges.Where(o => o >= s && o <= t).ToList();
 
             Console.WriteLine(applesInRange.Count);
             Console.WriteLine(orangesInRange.Count);
@@ -82,13 +82,73 @@ namespace HackerRankExercises
                 }
             }
         }
-<<<<<<< HEAD:Implementation.cs
 
-        public static int getTotalX(List<int> a, List<int> b)
+        public static List<int> breakingRecords(List<int> scores)
         {
+            int minScore = scores[0];
+            int maxScore = scores[0];
 
+            int leastPointsRecord = 0;
+            int mostPointsRecord = 0;
+
+            for (int i = 1; i < scores.Count; i++)
+            {
+                if (scores[i] < minScore)
+                {
+                    minScore = scores[i];
+                    leastPointsRecord++;
+                }
+
+                if (scores[i] > maxScore)
+                {
+                    maxScore = scores[i];
+                    mostPointsRecord++;
+                }
+            }
+
+            return [mostPointsRecord, leastPointsRecord];
         }
-=======
->>>>>>> 5fe4a357e8bdb81ce5d09c01ffbbd812af078621:BitManipulation.cs
+
+        public int birthday(List<int> s, int d, int m)
+        {
+            if (m > s.Count)
+            {
+                return 0;
+            }
+
+            int divisionCount = 0;
+
+            for (int i = 0; i < s.Count - 1; i++)
+            {
+                int result = s[i];
+                if (m > s.Count - i)
+                {
+                    break;
+                }
+                for (int j = i + 1; j < i + m; j++)
+                {
+                    result += s[j];
+                }
+
+                if (result == d)
+                {
+                    divisionCount++;
+                }
+            }
+
+            if (m == 1 && s.Contains(d))
+            {
+                for (int i = 0; i < s.Count; i++)
+                {
+                    if (s[i] == d)
+                    {
+                        divisionCount++;
+                    }
+                }
+            }
+
+            return divisionCount;
+        }
+
     }
 }
